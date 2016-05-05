@@ -11,7 +11,6 @@ int processing(char path[], char symbol, char alease, char result[])
         || symbol == '/'){
 
         printf("unexpected symbol %c eror!", symbol);
-
         return 2;
     }
 
