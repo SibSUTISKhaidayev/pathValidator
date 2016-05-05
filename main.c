@@ -26,7 +26,7 @@ int main(void)
 {
     char path[260],
          symbol[3], alease[3],
-         result[260];
+         result[260] = {'\0'};
 
     input(path, symbol, alease);
     cheking(path);

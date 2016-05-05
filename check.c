@@ -128,7 +128,8 @@ int validationOfIP(char ip[], int pos, char url[])
     char c = 255,
          octet[4]= {'\0'};
     int i = 0,
-        dotPos = 0;
+        dotPos = 0,
+        dotCount = 0;
     int _start = pos;
     while(c != '\0'){
         c = ip[i];
@@ -142,12 +143,17 @@ int validationOfIP(char ip[], int pos, char url[])
                 return adressError(url, i+4, "An octet most consist of numbers in range from 0 to 255");
 
             dotPos = i+1;
+            dotCount++;
             octet[0] = '\0';
             octet[1] = '\0';
             octet[2] = '\0';
             octet[3] = '\0';
         }
         i++;
+    }
+    if (dotCount < 4)
+    {
+        return adressError(url, _start+1, "ip adress unexpected short");
     }
     return 0;
 }

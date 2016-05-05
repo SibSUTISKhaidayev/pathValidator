@@ -8,7 +8,8 @@ int processing(char path[], char symbol, char alease, char result[])
     if( (symbol >= 'A' && symbol <= 'Z')
         || (symbol >= 'a' && symbol <= 'z')
         || symbol == '\\'
-        || symbol == '/'){
+        || symbol == '/'
+        || symbol == '.'){
 
         printf("unexpected symbol %c eror!", symbol);
         return 2;
@@ -16,7 +17,7 @@ int processing(char path[], char symbol, char alease, char result[])
 
     while(c != '\0'){
         c = path[i];
-        if( c == symbol ){
+        if( (c == symbol) && !(symbol >= '0' && symbol <= '9') ){
             c = alease;
             count++;
         }
