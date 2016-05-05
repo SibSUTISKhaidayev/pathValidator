@@ -13,7 +13,7 @@ int parsToSymbol(char string[], int fromSymbolNum, char toSymbol, char returning
         fromSymbolNum++;
         if(currentSymbol == '\0')
         {
-            return -1;
+            break;
         }
     }
     returningPart[abs(fromSymbolNum - _fromSymbolNum)-1] = '\0';
@@ -149,6 +149,7 @@ int validationOfIP(char ip[], int pos, char url[])
         }
         i++;
     }
+    return 0;
 }
 
 int cheking(char url[])
@@ -176,7 +177,7 @@ int cheking(char url[])
 
     start = parsToSymbol(url, start, '/', result);
     validationOfIP(result, start, url);
-    substructStr(start, url, substractedPath);
+    //substructStr(start, url, substractedPath);
 
     return pathValidation(url, substractedPath, start);
 }
