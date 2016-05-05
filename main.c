@@ -2,6 +2,7 @@
 
 
 //#include <math.h>
+#include "input.h"
 #include "check.h"
 #include "processing.h"
 #include "output.h"
@@ -28,7 +29,6 @@ int main(void)
          result[260];
 
     input(path, symbol, alease);
-
     cheking(path);
     processing(path, symbol[0], alease[0], result);
     output(result);
